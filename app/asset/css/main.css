@@ -1,0 +1,309 @@
+body{
+    font-family:"微软雅黑 Bold", "微软雅黑";
+}
+.header{
+    height:50px;
+    background-color:#23c185;
+    line-height:50px;
+    min-width:980px;
+}
+
+.familyIcon{
+    float:left;
+}
+
+.userInfo{
+    float:right;
+    padding-right:40px;
+}
+
+.content{
+    display: table;
+    width:100%
+}
+.content .left{
+    background-color:#2d6b7d;
+    display: table-cell;
+    width:7%;
+    min-width:111px;
+    max-width:111px;
+    height:720px;
+}
+.content .left ul{
+    list-style:none;
+    /*position: relative;
+    top:50px;*/
+}
+.content .left li{
+    margin-bottom: 70px;
+}
+.content .left .linkIcon{
+    text-align:center;
+    display: block;
+    /*color:#5e616d;*/
+    
+}
+.content .left .linkIcon.interactive:before{
+    content:url(../images/tab/tab_left_hudong.png);
+    position:absolute;
+    top:80px;
+    left:38px;
+    
+}
+.content .left .linkIcon.interactive.active:before{
+    content:url(../images/tab/tab_left_hudong_ov.png);
+    position:absolute;
+    top:80px;
+    left:38px;
+    
+}
+.content .left .linkIcon.satisfaction:before{
+    content:url(../images/tab/tab_left_manyi.png);
+    position:absolute;
+    top:170px;
+    left:38px;
+    
+}
+.content .left .linkIcon.satisfaction.active:before{
+    content:url(../images/tab/tab_left_manyi_ov.png);
+    position:absolute;
+    top:170px;
+    left:38px;
+    
+}
+.content .left .linkIcon.dataReport:before{
+    content:url(../images/tab/tab_left_baobiao.png);
+    position:absolute;
+    top:260px;
+    left:38px;
+    
+}
+.content .left .linkIcon.dataReport.active:before{
+    content:url(../images/tab/tab_left_baobiao_ov.png);
+    position:absolute;
+    top:260px;
+    left:38px;
+    
+}
+.content .left .linkIcon.active{
+    text-align:center;
+    color:#51df8e;
+    
+}
+.numAlertTop{
+    display: inline;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1;
+    color: #ffffff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    background-color: #f05050;
+    position: absolute;
+    top:60px;
+    left:200px;
+    padding: 6px;
+    width: 30px;
+    height: 28PX;
+    border-radius: 50%;
+}
+
+.content .left .linkIcon .numAlert{
+    display: inline;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1;
+    color: #ffffff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    background-color: #f05050;
+    position: absolute;
+    left: 60px;
+    padding: 6px;
+    width: 30px;
+    height: 28PX;
+    border-radius: 50%;
+}
+.content .left .linkIcon.interactive .numAlert{
+    top: 70px;
+}
+.content .left .linkIcon.satisfaction .numAlert{
+    top: 160px;
+}
+.content .left .linkIcon .title {
+    display: inline; 
+    text-align:center; 
+}
+
+.content .right{
+    display: table-cell;
+    width:93%;
+    min-width:600px;
+    background-color:#eff4fa;
+    
+}
+.content .right .top_nav{
+    height: 70px;
+    line-height: 70px;
+    padding-left:40px;
+    background-color:white;
+ 
+}
+.content .right .top_nav li{
+    margin-right: 80px;
+}
+.content .right .top_nav .nav_button{
+    color:#91a69e;
+}
+.content .right .top_nav .nav_button.alert{
+    display: inline; 
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1;
+    color: #ffffff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    background-color: #f05050;
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    padding: 6px;
+    width: 30px;
+    height: 28PX;
+    border-radius: 50%;
+}
+.content .right .top_nav .nav_button.consultList>span:before{
+    content:url(../images/tab/tab_top_hudongchuli.png);
+    position: absolute;
+    left:131px;
+    top:57px;
+}
+.content .right .top_nav .nav_button.consultList.active>span:before{
+    content:url(../images/tab/tab_top_hudongchuli_ov.png);
+    position: absolute;
+    left:131px;
+    top:57px;
+}
+
+.content .right .top_nav .nav_button.announcementList>span:before{
+    content:url(../images/tab/tab_top_gonggaoguanli.png);
+    position: absolute;
+    left:267px;
+    top:57px;
+}
+.content .right .top_nav .nav_button.announcementList.active>span:before{
+    content:url(../images/tab/tab_top_gonggaoguanli_ov.png);
+    position: absolute;
+    left:267px;
+    top:57px;
+}
+
+.content .right .top_nav .nav_button.submitSuggestionList>span:before{
+    content:url(../images/tab/tab_top_jianyi.png);
+    position: absolute;
+    left:393px;
+    top:57px;
+}
+.content .right .top_nav .nav_button.submitSuggestionList.active>span:before{
+    content:url(../images/tab/tab_top_jianyi_ov.png);
+    position: absolute;
+    left:393px;
+    top:57px;
+}
+
+.content .right .top_nav .nav_button.active{
+    color:#23c185;
+}
+.module{
+    
+    padding-left:40px;
+    padding-right:40px;
+}
+.brand_name{
+   color:#436357;
+   height:50px;
+   line-height: 50px;
+   
+}
+.module_content .table-nav{
+    background-color:white;
+    height:50px;
+   
+}
+.module_content .table-nav .nav{
+    display:inline-block;
+    width:80px;
+    text-align:center;
+    height:34px;
+    line-height:34px;
+    margin-top:8px;
+    
+}
+.module_content .table-nav .nav.active{
+    background-color:#23c185;
+    border-radius:20px;
+}
+.module_content .table-content{
+    background-color:white;
+}
+.table{
+    border:1px solid #e5e5e5;
+    margin-bottom:0px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+}
+.table thead{
+    color:#436357;
+    background-color:#f0fcf8;
+}
+.table thead tr th{
+    border-bottom-width: 0px;
+
+}
+.table tbody tr:hover{
+    background-color:#fff9cb;
+}
+.table tbody{
+    color:#91a69e;
+}
+.pagination{
+    margin:0;
+}
+.paging{
+    height:50px;
+    border:1px solid #e5e5e5
+}
+.modal-content{
+    border-bottom-width: 0px;
+}
+
+.dialog{
+    font-size: 12px;
+}
+.dialog .modal-header{
+    padding-top: 0px;
+    padding-bottom: 0px;
+    background-color:#23C185;
+    
+}
+
+.dialog .control-label{
+    text-align: left!important;
+}
+.dialog .form-group{
+    padding-left:40px;
+    padding-right:40px;
+}
+
+.errorMessage{
+    color:red;
+}
+/*重新bootstrap的分页样式*/
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus{
+    background-color:white;
+    color:#23c185!important;
+    font-weight: bold;
+}

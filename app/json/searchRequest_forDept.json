@@ -1,0 +1,27 @@
+{
+	"response": 1,
+	"error": "",
+	"result": [
+		{
+			"ResponseId": "1",
+			"RequestId": "1",
+			"RequestContent": "是否需要给门店更多饮料",
+			"RequestShop": "吴中路三店",			
+			"ResponseStatusId": "0",
+			"Timeout": 0,
+			"IsDeptRead":0,
+			"Attachments": 1,
+			"RequestDate": "2016-8-4 13:23:40"			
+		}, {
+			"ResponseId": "2",
+			"RequestId": "2",
+			"RequestContent": "是否需要给门店更多面包",
+			"RequestShop": "吴中路三店",			
+			"ResponseStatusId": "0",
+			"Timeout": 1,
+			"IsDeptRead": 0,
+			"Attachments": 0,
+			"RequestDate": "2016-8-5 16:12:10"			
+		}
+	]
+}

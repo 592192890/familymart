@@ -1,0 +1,14 @@
+﻿{
+	"shopId":"101234",
+	"depts": [
+		{
+			"deptId": "123",
+			"dept": "资讯部"
+		}, {
+			"deptId": "124",
+			"dept": "建设部"
+		}
+	],
+	"requestContent": "我要吃面包",
+	"requestStatus": "2"
+}

@@ -1,0 +1,33 @@
+﻿
+<div ng-controller="issueDetailCtrl" class="restaurant-container">
+    <header class="shop-header">
+        <a class="header-back col-xs-4" ui-sref="consulting-list">
+            <i class="glyphicon glyphicon-chevron-left"></i>
+        </a>
+        <div class="header-title col-xs-4 text-center">
+            <b>detail</b>
+        </div>
+        <div class="col-xs-4"></div>
+    </header>
+
+    <div style="padding-top:10px;">
+        发送至:<span><b>{{departmentName}}</b></span>
+        <span style="float:right;background-color:yellow;"><b>{{statusName}}</b></span>
+    </div>
+    <div style="padding-top:20px;">
+        {{content}}
+    </div>
+    <div style="padding-top:10px;">
+        <ul>
+            <li class="item" ng-repeat="url in picURLs">
+                <p class="img">
+                    <img src="{{url}}" />
+                </p>
+            </li>
+            <li style="color:gray">
+                {{createdDate}}
+            </li>
+        </ul>
+    </div>
+
+</div>

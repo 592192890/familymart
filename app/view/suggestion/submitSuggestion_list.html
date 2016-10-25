@@ -1,0 +1,49 @@
+<div ng-include="'view/topNavigatorButton/interactiveTopNav.html'"></div>
+<div  class="module" ng-controller="submitSuggestionListFormController">
+    <div class="module_content">
+       <div class="table-title">
+             <div class="brand_name" style="display:inline-block"><img src="asset/images/title/list_icon_liebiao.png" alt="">建议列表</div>
+            <!--<div style="display:inline-block;float:right;margin-top:13px;color:#23c185">
+               <input type="text" placeholder="搜索" ng-model="searchContext"><button class="btn btn-default" ng-click="doSearch()">搜索</button>
+               <button class="btn btn-default">新建</button>
+               <a href="{{exportSubmitSuggestion}}">导出数据</a>
+            </div> -->
+			<div style="display:inline-block;float:right;margin-top:13px;">
+               <input type="text" placeholder="搜索" ng-model="searchContext"><button class="btn btn-default" ng-click="doSearch()">搜索</button>
+               <button class="btn btn-default" ng-click="checkSubmitSuggestionAdd()">新建</button>
+               <a href="{{exportSubmitSuggestion}}">导出数据</a>
+            </div>
+        </div>
+        <div class="table-content">
+            <div id="suggestion">
+                <div class="scrollTable" style="overflow:hidden">
+                    <table class="table table-hover">
+                        <thead>
+                            <th style="width:2%"></th>
+                            <th style="width:30%;;min-width:230px">建议部门</th>
+                            <th style="width:40%;;min-width:308px">建议内容</th>
+                            <th style="width:14%;;min-width:106px">发送时间</th>
+                            <th style="width:14%;;min-width:106px">状态</th>
+                        </thead>
+
+                        <tbody>
+                            <tr ng-repeat="item in query.entity.suggestionList" ng-click="checkSubmitSuggestionDetail_operation(item)">
+                                <td></td>
+                                <td ng-bind="item.Dept"></td>
+                                <td ng-bind="item.content | lipsisFilter:20"></td>
+                                <td ng-bind="item.date | date:'yyyy-MM-dd'"></td>
+                                <td ng-bind="item.status.name"></td>
+                            </tr>
+                           
+                        </tbody>
+                    </table>
+                </div>
+                <div class="location-page">
+                    <div paging  total="totalPages"  index="pageIndex" searcher="doPagingSearch_suggestion"></div>
+                 </div>
+            </div>
+        </div>
+        
+       
+    </div>
+</div>

@@ -1,0 +1,99 @@
+<div ng-include="'view/topNavigatorButton/interactiveTopNav.html'"></div>
+<div class="module" ng-controller="suggestiontListFormController">
+   <div class="module_content">
+       <div class="table-title">
+           <div class="brand_name" style="display:inline-block"><img src="asset/images/title/list_icon_liebiao.png" alt="">待处理内容</div>
+            <div style="display:inline-block;float:right;margin-top:13px"><img src="asset/images/other/list_btn_daochu.png" alt=""><a href="{{unOperationSuggestionExport}}">导出数据</a></div>
+       </div>
+        <div class="table-nav">
+            <div class="nav" ng-click="goConsult()">咨询</div>
+            <div class="nav active" ng-click="goSuggestion()">建议</div>
+            <span style="float:right;margin-top:13px"><input type="text"  ng-model="searchUnOperationContext" placeholder="请输入搜索文字"><button ng-click="doSearchUnOperation()">搜索</button></span>
+        </div>
+
+        <div class="table-content">
+            <div id="unsuggestion">
+                <div class="scrollTable" style="overflow:hidden">
+                    <table class="table table-hover">
+                        <thead>
+                            <th style="width:2%"></th>
+                            <th style="width:30%;;min-width:230px">门店</th>
+                            <th style="width:40%;;min-width:308px">建议内容</th>
+                            <th style="width:14%;;min-width:106px">建议时间</th>
+                            <th style="width:14%;;min-width:106px">状态</th>
+                        </thead>
+
+                        <tbody>
+                            <tr ng-repeat="item in query.entity.unsuggestionList" ng-click="checkSuggestionDetail_unoperation(item)">
+                                <td ng-if="item.timeout==1"><img src="asset/images/other/list_icon_chaoshi.png" alt=""></td>
+                                <td ng-if="item.status.id==1&&item.timeout==0"></td><!--status.id==2为未归档-->
+                                <td ng-if="item.status.id==2&&item.dept_read==0&&item.timeout==0"><img src="asset/images/other/list_icon_newe.png" alt=""></td>
+                                <td ng-if="item.status.id==2&&item.dept_read==1&&item.timeout==0"></td>
+                                <td ng-bind="item.dept"></td>
+                                <td ng-bind="item.content | lipsisFilter:20"></td>
+                                <td ng-bind="item.date | date:'yyyy-MM-dd'"></td>
+                                <td ng-bind="item.status.name"></td>
+                            </tr>
+                        
+                        </tbody>
+                    </table>
+                </div>
+                <div class="location-page">
+                    <div paging  total="totalPages_unoperation"  index="pageIndex_unoperation" searcher="doPagingSearch_unoperation"></div>
+                </div>
+            </div>
+
+           
+        </div>
+   </div>
+    
+   <div class="module_content">
+        <div class="table-title">
+           <div class="brand_name" style="display:inline-block"><img src="asset/images/title/list_icon_liebiao.png" alt="">已处理内容</div>
+           <div style="display:inline-block;float:right;margin-top:13px"><img src="asset/images/other/list_btn_daochu.png" alt=""><a href="{{operationSuggestionExport}}">导出数据</a></div>
+        </div>
+         
+         <div class="table-nav">
+            <div class="nav" ng-click="goConsult()">咨询</div>
+            <div class="nav active" ng-click="goSuggestion()">建议</div>
+            <span style="float:right;margin-top:13px"><input type="text"  ng-model="searchOperationContext" placeholder="请输入搜索文字"><button ng-click="doSearchOperation()">搜索</button></span>
+        </div>
+
+      
+        <div class="table-content">
+            <div id="suggestion_operation">
+                <div class="scrollTable" style="overflow:hidden">
+
+                    <table class="table table-hover">
+                        <thead>
+                            <th style="width:2%"></th>
+                            <th style="width:30%;;min-width:230px">门店</th>
+                            <th style="width:40%;;min-width:308px">建议简介</th>
+                            <th style="width:14%;;min-width:106px">回复时间</th>
+                            <th style="width:14%;;min-width:106px">状态</th>
+                        </thead>
+
+                        <tbody>
+                            <tr ng-repeat="item in query.entity.suggestionList" ng-click="checkSuggestionDetail_operation(item)">
+                                <td></td>
+                                <td ng-bind="item.dept"></td>
+                                <td ng-bind="item.content | lipsisFilter:20"></td>
+                                <td ng-bind="item.date | date:'yyyy-MM-dd'"></td>
+                                <td ng-bind="item.status.name"></td>
+                            </tr>
+                        
+                        </tbody>
+                    </table>
+                </div>
+                <div class="location-page">
+                    <div paging2  total2="totalPages_operation"  index2="pageIndex_operation" searcher2="doPagingSearch_operation"></div>
+                </div>
+            </div>
+
+            
+        
+        </div>
+   </div>
+   
+  
+</div>

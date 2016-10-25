@@ -1,0 +1,63 @@
+﻿        <h1>首页</h1>
+        <p>公告：7月21日店铺购买积分政策</p>
+        <div>
+            <a ui-sref="consulting-list">咨询</a>
+        </div>
+
+        <div>
+            <a>公告</a>
+        </div>
+        <div>
+            最新信息
+        </div>
+        <div>
+
+        </div>
+        <paging  total="totalPages"  index="pageIndex" searcher="doPagingSearch"></paging>
+        <br>
+        <br>
+        <form class="form-horizontal" name="form">
+            <div class="form-line">
+                <label>请上传图片1</label>
+                <div class="choose-file-area">
+                    
+                    <a href="javascript:;" class="choose-book">
+                       <!--<input class="form-control" type="file" ng-model="file" name="inputFile" base-sixty-four-input required maxsize="500" accept="image/*">-->
+                       <input class="form-control" type="file" nv-file-select uploader="uploader" name="upload" accept="image/*">
+                    </a>
+                </div>
+            </div>
+           <b>Model Value:</b>
+            <table class="table table-bordered table-striped">
+            <tr>
+                <th>filename</th>
+                <th>filetype</th>
+                <th>filesize (<i><small>KB</small></i>)</th>
+                <th>base64</th>
+            </tr>
+            <tr ng-show="file">
+                <td>{{file.filename}}</td>
+                <td>{{file.filetype}}</td>
+                <td>{{file.filesize / 1000}}</td>
+                <td>{{file.base64.substring(0, 30)}}...</td>
+            </tr>
+            <tr>
+                <td colspan="4" ng-show="!file">
+                <small><i>No file selected.</i></small>
+                </td>
+            </tr>
+            </table>
+            <button type="submit" ng-click="UploadFile()">提交</button>
+        </form>
+        <br>
+        <br>
+      
+        <button class="btn" ng-click="open()">Open Dialog!</button>  <br>
+
+       <button ng-click="test()">test</button>
+        <input type="text" ng-model="query.entity.testName">
+        <input type="text" ng-model="query.entity.content">
+       
+     
+        <div ck-editor ng-model="query.entity.content" name="content"></div>	
+

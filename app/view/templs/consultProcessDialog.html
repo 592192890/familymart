@@ -1,0 +1,148 @@
+ <script type="text/ng-template" id="consultProcessDialog.html" />  
+ 	<div class="dialog" style="font-size:12px">
+		<div class="modal-header">
+			<a class="close" data-dismiss="modal" ng-click="cancel()" style="margin-top:10px">×</a>
+			<span class="brand_name" style="margin-top: 0px;color:white"><img src="asset/images/title/popup_icon_biaoti.png" alt="">案件处理</span>
+		</div>
+		<div class="modal-body" style="padding:0px">  
+			<form class="form-horizontal" role="form" style="background-color:#EFF4FA;color:#91a69e;" ng-if="transferHistory">
+				<div style="text-align:center;height:40px;line-height:40px;font-size:14px;font-weight:bold">转移信息</div>
+				<div class="form-group">
+					<label for="content" class="col-sm-1 control-label" style="font-weight:normal"><img src="asset/images/other/popup_icon_zhuanyi.png" alt=""></label>
+					<div class="col-sm-10" style="padding-top:11px">
+						{{transferHistory}}
+					</div>
+				</div>
+				<hr style="margin-bottom:0px">
+			</form>
+			<form class="form-horizontal" role="form" style="background-color:#EFF4FA;color:#91a69e;" ng-repeat="item in query.entity.response">
+				<div style="text-align:center;height:40px;line-height:40px;font-size:14px;font-weight:bold">回复信息</div>
+				<div class="form-group">
+					<label for="requestor" class="col-sm-1 control-label" style="font-weight:normal">部门：</label>
+					<div class="col-sm-3" style="padding-top:7px">
+						{{item.Dept}}
+					</div>
+					<label for="questionDate" class="col-sm-2 control-label" style="font-weight:normal">提问时间：</label>
+					<div class="col-sm-4" style="padding-top:7px">
+						{{item.responseTime | date:'yyyy-MM-dd'}}
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="content" class="col-sm-1 control-label" style="font-weight:normal">内容：</label>
+					<div class="col-sm-10" style="padding-top:7px">
+						{{item.Content}}
+					</div>
+				</div>
+				<div class="form-group" style="padding-bottom: 0px;margin-bottom: 0px;">
+					<label for="attach" class="col-sm-2 control-label" style="font-weight:normal">附件：</label>
+					<div class="col-sm-10" style="padding-top:7px">
+						<span ng-repeat="img in item.Attchments.list">
+							<img src="{{query.entity.request.Attchments.basePath+'/'+img.thumb}}" alt="">
+						</span>
+					</div>
+				</div>
+				<hr style="margin-bottom:0px">
+			</form>
+			<form class="form-horizontal" role="form" style="background-color:#EFF4FA;color:#91a69e;">
+				<div style="text-align:center;height:40px;line-height:40px;font-size:14px;font-weight:bold">原始问题</div>
+				<div class="form-group">
+					<label for="requestor" class="col-sm-1 control-label" style="font-weight:normal;padding-right:0px">发起方：</label>
+					<div class="col-sm-3" style="padding-top:7px">
+						{{query.entity.request.RequestShop}}
+					</div>
+					<label for="questionDate" class="col-sm-2 control-label" style="font-weight:normal;padding-right:0px">提问时间：</label>
+					<div class="col-sm-4" style="padding-top:7px">
+						{{query.entity.request.RequestDate | date:'yyyy-MM-dd'}}
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="content" class="col-sm-1 control-label" style="font-weight:normal">内容：</label>
+					<div class="col-sm-10" style="padding-top:7px">
+						{{query.entity.request.RequestContent}}
+					</div>
+				</div>
+				<div class="form-group" style="padding-bottom: 20px;">
+					<label for="attach" class="col-sm-2 control-label" style="font-weight:normal">附件：</label>
+					<div class="col-sm-10" style="padding-top:7px">
+						<span ng-repeat="img in query.entity.request.Attchments.list">
+							<img src="{{query.entity.request.Attchments.basePath+img.thumb}}" alt="">
+						</span>
+					</div>
+				</div>
+			</form>
+			<form class="form-horizontal" name="consultForm" role="form" style="padding-right:15px;" novalidate>
+				<div class="form-group">
+					<label for="migrate" class="col-sm-2 control-label">是否转移部门：</label>
+					<div class="col-sm-9" style="padding-top:7px">
+						<input type="radio" name="radio" checked="checked" ng-click="isMigrate=false">否
+						<input type="radio" name="radio" ng-click="isMigrate=true" style="margin-left: 20px;">是
+					</div>
+				</div>
+				<div class="form-group" ng-if="isMigrate">
+					<label for="dep" class="col-sm-2 control-label">选择部门：</label>
+					<div class="col-sm-4">
+						<select class="form-control" name="dep"  ng-model="query.entity.dep" ng-options="x.deptId as x.dept for x in depList" required></select>
+					</div>
+					<div class="errorMessage">
+						<span class="glyphicon glyphicon-remove"
+							ng-show="consultForm.dep.$error.required && sumbmited" >部门必填</span>
+					</div>
+				</div>
+
+				<div class="form-group" ng-if="!isMigrate">
+					<label for="type" class="col-sm-2 control-label">选择大类：</label>
+					<div class="col-sm-4">
+						<select class="form-control" name="type" ng-model="query.entity.bigType" ng-options="x.categoryCode as x.name for x in typeList" required>
+							
+						</select>
+					</div>
+					<div class="errorMessage">
+						<span class="glyphicon glyphicon-remove"
+							ng-show="consultForm.type.$error.required && sumbmited" >大类必填</span>
+					</div>
+				</div>
+				<div class="form-group" ng-if="!isMigrate">
+					<label for="subtype" class="col-sm-2 control-label">选择子类：</label>
+					<div class="col-sm-4">
+						<select class="form-control" name="subtype"  ng-model="query.entity.subType" ng-options="x.categoryCode as x.name for x in subType" required>
+
+						</select>
+					</div>
+					<div class="errorMessage">
+						<span class="glyphicon glyphicon-remove"
+							ng-show="consultForm.subtype.$error.required && sumbmited" >子类必填</span>
+					</div>
+				</div>
+				<div class="form-group" ng-if="!isMigrate">
+					<label for="feedbackcontent" class="col-sm-2 control-label">回复内容：</label>
+					<div class="col-sm-6">
+						 <textarea class="form-control" rows="3" cols="50" name="content" ng-model="query.entity.feedbackContent" required></textarea>
+					</div>
+					<div class="errorMessage">
+						<span class="glyphicon glyphicon-remove"
+							ng-show="consultForm.content.$error.required && sumbmited" >内容必填</span>
+					</div>
+				</div>
+				<div class="form-group" ng-if="!isMigrate">
+					<label for="attach" class="col-sm-3 control-label">附件：</label>
+					<div class="col-sm-9">
+						
+						<div web-uploader></div>
+ 
+						
+
+						<span ng-repeat="item in query.entity.request.Attachments.list">
+							<img src="{{query.entity.request.Attachments.basePath+item.thumb}}" alt="">
+						</span>
+					</div>
+				</div>
+			
+			</form>
+		</div>  
+		<div class="modal-footer" style="text-align:center">  
+			<button class="btn" style="background-color:#23c185;font-size:14px;color:white" ng-click="ok(consultForm.$valid)">确定</button>  
+			<button class="btn" style="background-color:#FEBF1E;font-size:14px;color:white" ng-click="save(consultForm.$valid)" ng-show="isMigrate==false">保存</button>  
+		</div>  
+	</div>
+	
+</script>  

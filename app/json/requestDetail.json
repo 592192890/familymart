@@ -1,0 +1,60 @@
+{
+	"response": 1,
+	"error": "",
+	"result": {
+		"request": {
+			"RequestContent": "是否需要给门店更多饮料",
+			"RequestShop": "吴中路三店",
+			"RequestStatus": "部分回复",
+			"Attachments": {
+				"count": 2,
+				"basePath": "/20160804/request/",
+				"list": [
+					"a.jpg", "b.jpg"
+				]
+			},
+			"RequestDate": "2016-8-4 13:23:40",
+			"Department": [
+				"资讯部", "建设部","物流部"
+			]
+		},
+		"response": [
+			{
+				"dept": "资讯部",
+				"category": "服务-态度",
+				"ResponseStatus": "已回复",
+				"responseTime": "2016-08-05 16:23:45",
+				"content": "可以",
+				"Attachments": {
+					"count": 2,
+					"basePath": "/20160810/response/",
+					"list": [
+						"a.jpg", "b.jpg"
+					]
+				},
+				"transferHistory": []
+			},
+			{
+				"dept": "商品部",
+				"category": "服务-态度1",
+				"ResponseStatus": "已回复",
+				"responseTime": "2016-08-05 16:23:45",
+				"content": "可以",
+				"Attachments": {
+					"count": 2,
+					"basePath": "/20160810/response/",
+					"list": [
+						"c.jpg", "d.jpg"
+					]
+				},
+				"transferHistory": ["建设部","商品部"]
+			},
+			{
+				"dept": "营业部",
+				"ResponseStatus": "超时",				
+				"transferHistory": ["物流部","营业部"]
+			}
+			
+		]
+	}
+}

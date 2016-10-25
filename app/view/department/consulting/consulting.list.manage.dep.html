@@ -1,0 +1,28 @@
+﻿
+<div ng-controller="issueDetailCtrl" class="restaurant-container">
+    <div>
+        <header class="shop-header">
+            <a class="header-back col-xs-4" ng-href="/">
+                <i class="glyphicon glyphicon-chevron-left"></i>
+            </a>
+            <div class="header-title col-xs-4 text-center">
+                <b>选择部门</b>
+            </div>
+            <div class="col-xs-4">确定</div>
+        </header>
+    </div>
+
+    <div>
+        <div class="ui-body ui-body-a ui-corner-all">
+            <ul>
+                <li ng-repeat="item in departments">
+                    <div ng-click="chosingDepartment(item)">
+                        {{item.departmentName}}
+                        <img ng-show="isChoseDepartment" src="/assets/img/common/lovely.png" />
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

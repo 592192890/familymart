@@ -1,0 +1,14 @@
+<div class="top_nav" ng-controller="interactiveTopNavController">
+    <ul>
+        <li style="display:inline-block" ng-click="goFunction('consultList')" class="nav_button consultList">
+            <span >互动处理</span>
+            <div class="numAlertTop" ng-bind="newRecords_interactive" ng-if="newRecords_interactive!=0"></div>
+        </li>
+        <li style="display:inline-block" ng-click="goFunction('announcementList')" class="nav_button announcementList">
+            <span >公告管理</span>
+        </li>
+        <li style="display:inline-block" ng-click="goFunction('submitSuggestionList')" class="nav_button submitSuggestionList">
+            <span >提建议</span>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,36 @@
+<div ng-controller="issueListCtrl" class="restaurant-container">
+    <!--<header class="shop-header">
+        <a class="header-back col-xs-4" ui-sref="department">
+            <i class="glyphicon glyphicon-chevron-left"></i>
+        </a>
+        <div class="header-title col-xs-4 text-center">
+            <b>咨询</b>
+        </div>
+        <div class="col-xs-4"></div>
+    </header>-->
+    <!--<div id="wrapper" ng-iscroll='wrapper' ng-iscroll-delay='50'>
+        <div id="scroller">
+            <ul id="thelist">
+                <li ng-repeat="playlist in playlists">
+                    <div>
+                        <a ui-sref="consulting-list-view({listId: playlist.id})"><span><b>{{playlist.departments}}</b></span></a>
+                        <span style="float: right" data-ng-click="statego(playlist.id)">{{playlist.createDate}}</span>
+                    </div>
+                    <div>
+                        <span class="hide-text-overflow qj-item-content">{{playlist.content}}</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>-->
+    <div id="wrapper">
+        <div id="scroller">
+            <div class="pullDown">
+                <span class="pullDownIcon">&nbsp;</span>
+                <span class="pullDownLabel">下拉刷新</span>
+            </div>
+            <ul></ul>
+            <div class="pullUp"></div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,71 @@
+ <script type="text/ng-template" id="consultFeedbackDialog.html" />  
+ 	<div class="dialog">
+		 <div class="modal-header">  
+			 <a class="close" data-dismiss="modal" ng-click="cancel()" style="margin-top:10px">×</a>
+			<span class="brand_name" style="margin-top: 0px;color:white"><img src="asset/images/title/popup_icon_biaoti.png" alt="">已处理案件</span>
+		</div>  
+		<div class="modal-body" style="padding:0px;background-color:#EFF4FA;color:#91a69e;">  
+			
+			<form class="form-horizontal" role="form" ng-repeat="responseItem in query.entity.response">
+				<div style="text-align:center;height:40px;line-height:40px;font-size:14px;font-weight:bold">回复信息</div>
+				<div class="form-group">
+					<label for="type" class="col-sm-2 control-label">大类：</label>
+					<div class="col-sm-3" style="padding-top:7px">
+						{{responseItem.CategoryPath.split("-")[0]}}
+					</div>
+					<label for="subType" class="col-sm-2 control-label">子分类：</label>
+					<div class="col-sm-3" style="padding-top:7px">
+						{{responseItem.CategoryPath.split("-")[1]}}
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="feedbackDate" class="col-sm-2 control-label">回复部门：</label>
+					<div class="col-sm-3" style="padding-top:7px">
+						{{responseItem.Dept}}
+					</div>
+					<label for="feedbackDate" class="col-sm-2 control-label">回复时间：</label>
+					<div class="col-sm-3" style="padding-top:7px">
+						{{responseItem.responseTime | date:'yyyy-MM-dd'}}
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<label for="feedbackContent" class="col-sm-2 control-label">回复内容：</label>
+					<div class="col-sm-9" style="padding-top:7px">
+						{{responseItem.Content}}
+					</div>
+				</div>
+				<hr style="border:0;background-color:#e5e5e5;height:1px;"> 
+			</form>
+			<form class="form-horizontal" role="form" style="padding-bottom:30px">
+				 <div style="text-align:center;height:40px;line-height:40px;font-size:14px;font-weight:bold">原始问题</div>
+				<div class="form-group">
+					<label for="requestor" class="col-sm-1 control-label" style="padding-right:0px">发起方：</label>
+					<div class="col-sm-3" style="padding-top:7px">
+						{{query.entity.request.RequestShop}}
+					</div>
+					<label for="questionDate" class="col-sm-2 control-label">提问时间</label>
+					<div class="col-sm-3" style="padding-top:7px">
+						{{query.entity.request.RequestDate | date:'yyyy-MM-dd'}}
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="content" class="col-sm-1 control-label">内容：</label>
+					<div class="col-sm-9" style="padding-top:7px">
+						{{query.entity.request.RequestContent}}
+					</div>
+				</div>
+				<div class="form-group" ng-if="!isMigrate">
+					<label for="attach" class="col-sm-2 control-label">附件：</label>
+					<div class="col-sm-9">
+						<span ng-repeat="item in query.entity.request.Attachments.list">
+							<img src="{{query.entity.request.Attachments.basePath+item.thumb}}" alt="">
+						</span>
+					</div>
+				</div>
+			</form>
+		</div>  
+		
+	</div>
+	
+</script>  

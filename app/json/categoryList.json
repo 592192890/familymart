@@ -1,0 +1,31 @@
+﻿{
+	"response": 1,
+	"error": "",
+	"result": [
+		{
+			"categoryCode": "10",
+			"name": "服务",
+			"sub": [
+				{
+					"categoryCode": "1010",
+					"name": "收银"
+				}, {
+					"categoryCode": "1011",
+					"name": "态度"
+				}
+			]
+		}, {
+			"categoryCode": "11",
+			"name": "品质",
+			"sub": [
+				{
+					"categoryCode": "1010",
+					"name": "收银"
+				}, {
+					"categoryCode": "1011",
+					"name": "态度"
+				}
+			]
+		}
+	]
+}

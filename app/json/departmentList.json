@@ -1,0 +1,13 @@
+{
+	"response": 1,
+	"error": "",
+	"result": [
+		{
+			"deptId": "123",
+			"dept": "资讯部"
+		}, {
+			"deptId": "124",
+			"dept": "建设部"
+		}
+	]
+}

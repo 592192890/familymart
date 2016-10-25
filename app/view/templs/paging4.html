@@ -1,0 +1,55 @@
+<div style="display:inline-block;line-height:48px">
+<span>第</span>
+</div>
+<div style="display:inline-block;line-height:48px">
+    <!--<input type="text" class="form-control" placeholder="页号" ng-model="myIndex" ng-blur="toPage(myIndex)" style="margin-top: 7px;">-->
+    <span ng-if="pageCount4!=0">{{myIndex4}}/{{pageCount4}}</span>
+    <span ng-if="pageCount4==0">0/{{pageCount4}}</span>
+</div>
+<div style="display:inline-block;line-height:48px">
+<span>页</span>
+</div>
+
+<div style="display:inline-block;line-height:48px">
+    <span>共{{total4}}条信息</span>
+</div>
+
+<div style="display:inline-block;float:right;line-height:48px">
+    <select name="" ng-model="selectedPage4" ng-options=" x.pageIndex4 for x in pageCountArr4"></select>
+</div>
+<div style="display:inline-block;float:right;line-height:48px">
+    <span>跳转到</span>
+</div>
+
+
+<div style="display:inline-block;float:right;padding-top:7px">
+    <ul class="pagination">
+        <!--<li>
+            <a href="javascript:" aria-label="Previous" ng-click="toFirst()">
+                <span aria-hidden="true">首页</span>
+            </a>
+        </li>-->
+        <li>
+            <a href="javascript:" aria-label="Previous" ng-click="searchPrevious4()" style="border:0px">
+                <span aria-hidden="true"><img src="asset/images/other/list_btn_first.png" alt=""></span>
+            </a>
+        </li>
+        <li ng-repeat="page4 in pages4" ng-class="{'active': page4.index4 == index4 }" ng-show="(page4.index4<=ceilingIndex4) && (page4.index4>=ceilingIndex4-4)">
+            <a href="javascript:" ng-click="searchIndex4(page4.index4)" style="border:0px;color:#91a69e">{{page4.index4}}</a>
+        </li>
+        <li>
+            <a href="javascript:" aria-label="Next" ng-click="searchNext4()" style="border:0px">
+                <span aria-hidden="true"><img src="asset/images/other/list_btn_last.png" alt=""></span>
+            </a>
+        </li>
+        <!--<li>
+            <a href="javascript:" aria-label="Next" ng-click="toLast()">
+                <span aria-hidden="true">最后一页</span>
+            </a>
+        </li>-->
+     
+    </ul>
+</div>
+
+
+

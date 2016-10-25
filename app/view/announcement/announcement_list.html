@@ -1,0 +1,118 @@
+<div ng-include="'view/topNavigatorButton/interactiveTopNav.html'"></div>
+<div class="module" ng-controller="announcementListFormController">
+    <div class="module_content">
+        <div class="table_title">
+            <div class="brand_name" style="display:inline-block"><img src="asset/images/title/list_icon_liebiao.png" alt="">未发送公告 </div>
+            <div style="display:inline-block;float:right;margin-top:13px;color:#23c185">
+                <input type="text" placeholder="搜索">
+                <button class="btn btn-default">新建</button>
+                <button class="btn btn-default">导出数据</button>
+            </div>
+        </div>
+        <div class="table-content">
+            <div id="unconsult">
+                <div class="scrollTable" style="overflow:hidden">
+                    <table class="table table-hover">
+                        <thead>
+                            <th style="width:20px"></th>
+                            <th>标题</th>
+                            <th>内容简介</th>
+                            <th>预定发布时间</th>
+                            <th>状态</th>
+                        </thead>
+
+                        <tbody>
+                            <!--<tr ng-repeat="item in query.entity.unconsultList" ng-click="checkConsultDetail_unoperation(item)">
+                                <td></td>
+                                <td ng-bind="item.RequestShop"></td>
+                                <td ng-bind="item.RequestContent"></td>
+                                <td ng-bind="item.RequestCreatedDate"></td>
+                                <td ng-bind="item.RequestStatusId"></td>
+                            </tr>-->
+                            <tr>
+                                <td></td>
+                                <td>积分活动详情</td>
+                                <td>是否可以供给门店更多的面包和饮料等物品</td>
+                                <td>2017-07-11</td>
+                                <td>草稿</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>积分活动详情</td>
+                                <td>是否可以供给门店更多的面包和饮料等物品</td>
+                                <td>2017-07-11</td>
+                                <td>审批中</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="location-page">
+                    <div paging  total="totalPages_unoperation"  index="pageIndex_unoperation" searcher="doPagingSearch_unoperation"></div>
+                </div>
+            </div>
+        </div>
+        
+       
+    </div>
+    
+   
+
+    <br><br><br>
+    <div class="module_content">
+        <div class="table_title">
+            <div class="brand_name" style="display:inline-block"><img src="asset/images/title/list_icon_liebiao.png" alt="">历史公告 </div>
+            <div style="display:inline-block;float:right;margin-top:13px;color:#23c185">
+               <input type="text" placeholder="搜索">
+               <button class="btn btn-default">导出数据</button> 
+            </div> 
+        </div>
+        <div class="table-content">
+            <div id="unconsult">
+                <div class="scrollTable" style="overflow:hidden">
+                    <table class="table table-hover">
+                        <thead>
+                            <th style="width:20px"></th>
+                            <th>标题</th>
+                            <th>内容简介</th>
+                            <th>预定发布时间</th>
+                            <th>状态</th>
+                        </thead>
+
+                        <tbody>
+                            <!--<tr ng-repeat="item in query.entity.unconsultList" ng-click="checkConsultDetail_unoperation(item)">
+                                <td></td>
+                                <td ng-bind="item.RequestShop"></td>
+                                <td ng-bind="item.RequestContent"></td>
+                                <td ng-bind="item.RequestCreatedDate"></td>
+                                <td ng-bind="item.RequestStatusId"></td>
+                            </tr>-->
+                            <tr>
+                                    <td></td>
+                                    <td>积分活动详情</td>
+                                    <td>是否可以供给门店更多的面包和饮料等物品</td>
+                                    <td>2017-07-11</td>
+                                    <td>已发布</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>积分活动详情</td>
+                                    <td>是否可以供给门店更多的面包和饮料等物品</td>
+                                    <td>2017-07-11</td>
+                                    <td>已发布</td>
+                                </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="location-page">
+                    <div paging2  total2="totalPages_unoperation"  index2="pageIndex_unoperation" searcher2="doPagingSearch_unoperation"></div>
+                </div>
+            </div>
+        </div>
+    
+        
+       
+    </div>
+
+ 
+</div>
